@@ -1,0 +1,31 @@
+/* Professional colorful responsive styles */
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,#f0f7ff,#ffffff);color:#0f1724;margin:0}
+.container{max-width:1100px;margin:0 auto;padding:18px}
+.site-header{background:#1e293b;color:#fff;padding:12px}
+.header-inner{display:flex;align-items:center;gap:16px;justify-content:space-between}
+.brand{font-weight:700;color:#fff;text-decoration:none}
+.search-form{flex:1;margin:0 20px;display:flex}
+.search-form input{flex:1;padding:10px;border-radius:8px 0 0 8px;border:1px solid #e2e8f0}
+.search-form button{padding:10px 14px;border-radius:0 8px 8px 0;border:none;background:#2563eb;color:#fff}
+.top-nav a{color:#e6eef6;margin-left:10px;text-decoration:none}
+.hero{padding:36px 0;text-align:center}
+.hero h1{font-size:28px;color:#0f1724;margin-bottom:6px}
+.job-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:18px}
+.job-card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+.job-card h3{font-size:18px;margin-bottom:6px}
+.meta{color:#64748b;font-size:14px;margin-bottom:8px}
+.btn{display:inline-block;padding:8px 12px;background:#0ea5a3;color:#fff;border-radius:8px;text-decoration:none}
+.btn.primary{display:inline-block;padding:10px 16px;background:linear-gradient(90deg,#4b46f0,#06b6d4);color:#fff;border-radius:10px;text-decoration:none}
+.btn.ghost{background:transparent;color:#2563eb;border:1px solid #2563eb}
+.job-list{margin-top:18px}
+.job-row{display:flex;align-items:center;justify-content:space-between;padding:14px;background:#fff;border-radius:10px;margin-bottom:10px;box-shadow:0 6px 18px rgba(2,6,23,0.04)}
+.auth-card{max-width:420px;margin:30px auto;padding:20px;background:#fff;border-radius:10px;box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+.auth-card input, textarea{width:100%;padding:10px;margin-top:10px;border:1px solid #e6eef6;border-radius:8px}
+.flash{padding:10px;border-radius:8px;margin-bottom:8px}
+.site-footer{margin-top:30px;padding:18px 0;text-align:center;color:#64748b}
+@media(max-width:700px){
+  .header-inner{flex-direction:column;align-items:flex-start;gap:12px}
+  .search-form{width:100%}
+  .job-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}{{ job.title }}{% endblock %}
+{% block content %}
+<article class="job-detail">
+  <h1>{{ job.title }}</h1>
+  <div class="meta">{{ job.organization }} • {{ job.category or 'Not specified' }}</div>
+  <div class="dates">Posted on {{ job.created_at.strftime('%d %b %Y') if job.created_at else '' }} {% if job.last_date %} • Last date {{ job.last_date.strftime('%d %b %Y') }}{% endif %}</div>
+  <div class="description">{{ job.description | safe }}</div>
+
+  <form method="post" action="{{ url_for('apply_job', job_id=job.id) }}">
+    <button class="btn primary">Apply (Save to dashboard)</button>
+    {% if job.apply_link %}
+      <a class="btn" href="{{ job.apply_link }}" target="_blank">Apply on official site</a>
+    {% endif %}
+  </form>
+</article>
+{% endblock %}

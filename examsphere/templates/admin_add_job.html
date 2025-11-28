@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Admin - Add Job{% endblock %}
+{% block content %}
+<h2>Add job</h2>
+<form method="post">
+  <input name="title" placeholder="Job title" required>
+  <input name="organization" placeholder="Organization" required>
+  <input name="category" placeholder="Category">
+  <input name="apply_link" placeholder="Apply link (URL)">
+  <textarea name="description" placeholder="Job description"></textarea>
+  <input name="last_date" placeholder="Last date (YYYY-MM-DD)">
+  <button class="btn primary">Add Job</button>
+</form>
+{% endblock %}

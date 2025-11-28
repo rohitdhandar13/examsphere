@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <h1>Latest Government & Competitive Exams</h1>
+  <p>Find curated and updated exam & job openings — filter by category and apply links.</p>
+  <a class="btn primary" href="{{ url_for('jobs') }}">Browse Jobs</a>
+</section>
+
+<section class="job-grid">
+  {% for j in jobs %}
+    <article class="job-card">
+      <h3><a href="{{ url_for('job_detail', job_id=j.id) }}">{{ j.title }}</a></h3>
+      <p class="meta">{{ j.organization }} • {{ j.category }}</p>
+      <p class="snippet">{{ (j.description[:180] + '...') if j.description and j.description|length > 180 else (j.description or '') }}</p>
+      <div class="job-actions">
+        <a class="btn" href="{{ url_for('job_detail', job_id=j.id) }}">View</a>
+        {% if j.apply_link %}
+          <a class="btn ghost" href="{{ j.apply_link }}" target="_blank">Apply</a>
+        {% endif %}
+      </div>
+    </article>
+  {% else %}
+    <p>No jobs found.</p>
+  {% endfor %}
+</section>
+{% endblock %}
